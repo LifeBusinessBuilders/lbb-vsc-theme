@@ -1,7 +1,12 @@
 {
   "name": "lbb-vsc-theme",
   "displayName": "LBB Builder Theme",
-  "description": "A colorful VS Code/VSCodium theme for builders—balanced contrast and a matching terminal palette for long, comfortable coding sessions.",
+  "description": "A colorful theme pack for builders—balanced contrast, calm surfaces, and an integrated terminal palette designed for long, comfortable coding sessions.",
+  "markdown": "github",
+  "galleryBanner": {
+    "color": "#1E1E2E",
+    "theme": "dark"
+  },
   "version": "1.1.1",
   "publisher": "lifebusinessbuilders",
   "icon": "icon.png",

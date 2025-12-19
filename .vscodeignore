@@ -1,5 +1,11 @@
 node_modules/
 *.vsix
 .DS_Store
-extras/
+.git/
+.github/
+.vscode/
+.vscode-test/
+tests/
+scripts/
+tmp/
 extras/**

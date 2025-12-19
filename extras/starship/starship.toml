@@ -29,5 +29,5 @@ style = "fg:#CBA6F7"
 format = " [$symbol$branch]($style)"
 
 [character]
-success_symbol = "[\\$](fg:#6E6A86) "
-error_symbol   = "[\\$](fg:#D7263D) "
+success_symbol = "[$](fg:#6E6A86) "
+error_symbol   = "[$](fg:#D7263D) "
