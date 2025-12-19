@@ -1,165 +1,108 @@
 # LBB Builder Theme
 
-Custom colorful themes for builders who spend long hours coding — balanced contrast, reduced glare, and an integrated terminal palette designed to reduce eye strain.
+A colorful VS Code/VSCodium theme for builders. Balanced contrast, calm surfaces, and a matching terminal palette help you stay comfortable during long coding sessions.
 
-This extension includes:
-- **LBB Builder Dark**
-- **LBB Builder Light**
-- **Integrated terminal ANSI palettes** for both themes (VS Code / VSCodium integrated terminal)
+## Features
 
----
+- Dark and light variants: "LBB Builder Dark" and "LBB Builder Light"
+- Comfortable contrast for long sessions without sacrificing clarity
+- Integrated terminal colors included automatically via the theme ANSI palette
 
 ## Install
 
-### VS Code / VSCodium (recommended)
+### VSCodium (Open VSX)
+
 1. Open Extensions
-2. Search for **LBB Builder Theme** (once published), or install locally from a `.vsix`.
+2. Search for "LBB Builder Theme"
+3. Install and reload
 
-### Install from a `.vsix` (local / GitHub release)
-1. Build or download the `.vsix`
-2. Open Extensions → `…` → **Install from VSIX…**
-3. Select the file and reload if prompted
+### VS Code (Marketplace or VSIX)
 
----
+Marketplace:
+1. Open Extensions
+2. Search for "LBB Builder Theme"
+3. Install and reload
 
-## Use
-Open Command Palette → **Preferences: Color Theme** → choose:
-- **LBB Builder Dark**, or
-- **LBB Builder Light**
+VSIX:
+1. Download the `.vsix`
+2. In VS Code, open Extensions and choose "Install from VSIX..."
+3. Select the file and reload
 
----
+## Activate the theme
 
-## Integrated Terminal (VS Code / VSCodium)
-The theme sets these color keys:
-- `terminal.background`, `terminal.foreground`
-- `terminalCursor.*`, `terminal.selectionBackground`
-- `terminal.ansi*` + `terminal.ansiBright*`
+Use the Command Palette and run "Preferences: Color Theme", then choose:
+- LBB Builder Dark
+- LBB Builder Light
 
-So your VS Code/VSCodium terminal will match automatically when you switch themes.
+## Integrated terminal
 
----
+The integrated terminal picks up the theme's ANSI palette automatically. No extra configuration is required.
 
-## External terminals (macOS / Linux / Windows)
+## External terminal (macOS Terminal.app)
 
-### macOS — Terminal.app (fix the “blue bar” you saw)
-That bright cyan/blue bar is your **Selection** color in Terminal.app (it appears when a line is selected to the end).
+Terminal.app can render selection colors that look washed out with custom palettes. A quick fix:
 
-You *can* change it here:
-Terminal → **Settings…** → **Profiles** → (your profile, e.g. Homebrew/Basic) → **Text**:
-- **Selection**: set to a subtle value
-  - Dark recommendation: `#45475A`
-  - Light recommendation: `#DCE6F8`
-- Optional improvements:
-  - **Background** (Dark): `#1E1E2E`
-  - **Text** (Dark): `#D9E0EE`
-  - **Cursor** (Dark): `#89DCEB`
+1. Terminal.app > Settings > Profiles > your profile > Text
+2. Set "Selection color" to `#6E6A86`
+3. Set "Selected text color" to `#ECEFF4` (or white)
 
-If you want the full ANSI palette to match LBB Builder Dark, in the same screen:
-- Keep **Display ANSI colors** enabled
-- Click each ANSI swatch (Normal and Bright rows) and set them to the values listed in **Palette reference** below.
+## Starship prompt (recommended)
 
-Palette reference (Dark):
-Normal:
-- Black `#1A1A28`
-- Red `#F38BA8`
-- Green `#ABE9B3`
-- Yellow `#F9E2AF`
-- Blue `#89B4FA`
-- Magenta `#CBA6F7`
-- Cyan `#89DCEB`
-- White `#D9E0EE`
+Starship is a fast, cross-platform prompt that works the same on macOS, Linux, and Windows.
 
-Bright:
-- Black `#6E6A86`
-- Red `#D7263D`
-- Green `#ABE9B3`
-- Yellow `#FFB86C`
-- Blue `#96CDFB`
-- Magenta `#F5C2E7`
-- Cyan `#74C7EC`
-- White `#FFFFFF`
+### Install Starship
 
-Note: Terminal.app does not provide a simple “import theme file” flow like some terminals; manual setup is normal here.
-
-### macOS — iTerm2 (ready-to-import)
-If you use iTerm2, you can import a scheme instantly:
-- Files:
-  - `extras/iterm2/LBB Builder Dark.itermcolors`
-  - `extras/iterm2/LBB Builder Light.itermcolors`
-- iTerm2 → Settings/Preferences → Profiles → Colors → Color Presets → Import…
-
-### Windows — Windows Terminal (ready-to-import)
-Use the bundled schemes file:
-- `extras/windows-terminal/schemes.json`
-
-How to apply:
-1. Open Windows Terminal settings
-2. Add the schemes objects under `"schemes": [ ... ]`
-3. In your profile, set `"colorScheme": "LBB Builder Dark"` (or Light)
-
-### Linux
-Linux terminals vary (GNOME Terminal, Konsole, Kitty, Alacritty, etc.). The theme controls the VS Code integrated terminal automatically.
-For external terminals, you can manually apply the same palette reference above, or translate it into your emulator’s format.
-
----
-
-## Prompt styling (the `user@host:path $` colors)
-
-### Why this is not part of the VS Code theme
-The VS Code theme controls the terminal **palette**, but the **prompt** is generated by your shell (zsh/bash/fish/PowerShell).
-
-### Zsh (macOS/Linux) — simple prompt (matches your preferred look)
-Add to `~/.zshrc`:
-
-```zsh
-autoload -Uz colors && colors
-PROMPT='%F{#ABE9B3}%n@%m%f:%F{#89B4FA}%~%f %F{#6E6A86}%(!.#.$)%f '
+macOS (install script):
+```
+curl -sS https://starship.rs/install.sh | sh
 ```
 
-Then reload:
-```sh
-source ~/.zshrc
+macOS (Homebrew, optional):
+```
+brew install starship
 ```
 
-### Cross-platform prompt (recommended): Starship
-Starship gives you one prompt config that works on:
-- macOS (zsh)
-- Linux (bash/zsh)
-- Windows (PowerShell)
-
-File included:
-- `extras/starship/starship.toml`
-
-Setup quickstart:
-1. Install Starship (see their official install page)
-2. Enable it for your shell
-3. Copy `extras/starship/starship.toml` to `~/.config/starship.toml`
-
----
-
-## Development / packaging
-
-### `engines.vscode`
-This is **not** your editor version — it declares the minimum VS Code extension API version the theme supports. VSCodium is compatible with the same API range.
-
-### Build a `.vsix`
-```sh
-npm i
-npx vsce package
+Windows (winget):
+```
+winget install --id Starship.Starship
 ```
 
----
+Linux (install script):
+```
+curl -sS https://starship.rs/install.sh | sh
+```
 
-## Publishing notes (VS Code Marketplace / Open VSX)
-If you publish publicly:
-- `publisher` must be a valid publisher ID (no spaces).
-- VSCodium typically uses Open VSX for discovery.
+### Enable Starship
 
----
+zsh (`~/.zshrc`):
+```
+eval "$(starship init zsh)"
+```
 
-## Files
-- `theme/LBB-Builder-Dark.json`
-- `theme/LBB-Builder-Light.json`
-- `extras/starship/starship.toml`
-- `extras/windows-terminal/schemes.json`
-- `extras/iterm2/*.itermcolors`
+bash (`~/.bashrc` or `~/.bash_profile`):
+```
+eval "$(starship init bash)"
+```
+
+PowerShell (`$PROFILE`):
+```
+Invoke-Expression (&starship init powershell)
+```
+
+If you already set a custom prompt (for example `PROMPT`, `PS1`, or `ZSH_THEME`), remove or comment it out so Starship can take over.
+
+### Apply the LBB Builder preset
+
+Copy the preset into Starship's config path:
+
+macOS/Linux:
+```
+cp extras/starship/starship.toml ~/.config/starship.toml
+```
+
+Windows (PowerShell):
+```
+Copy-Item extras\starship\starship.toml "$env:USERPROFILE\.config\starship.toml" -Force
+```
+
+The preset keeps the prompt clean by showing username, hostname, directory, and git branch only.

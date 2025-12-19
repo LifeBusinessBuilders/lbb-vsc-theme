@@ -1,24 +1,46 @@
 {
-  "name": "lbb-builder-light",
-  "displayName": "LifeBusiness Builders Theme",
-  "description": "A custom colorful theme for Visual Studio Codium",
-  "version": "1.0.0",
-  "publisher": "LBB Creations",
+  "name": "lbb-vsc-theme",
+  "displayName": "LBB Builder Theme",
+  "description": "A colorful VS Code/VSCodium theme for builders—balanced contrast and a matching terminal palette for long, comfortable coding sessions.",
+  "version": "1.1.1",
+  "publisher": "lifebusinessbuilders",
   "icon": "icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme.git"
+  },
+  "homepage": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme",
+  "bugs": {
+    "url": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme/issues"
+  },
   "engines": {
     "vscode": "^1.70.0"
   },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "vscode-theme",
+    "vscodium",
+    "dark",
+    "light",
+    "terminal",
+    "builder",
+    "lbb"
+  ],
   "contributes": {
     "themes": [
-      {
-        "label": "LBB Builder Light",
-        "uiTheme": "vs",
-        "path": "./theme/LBB-Builder-Light.json"
-      },
       {
         "label": "LBB Builder Dark",
         "uiTheme": "vs-dark",
         "path": "./theme/LBB-Builder-Dark.json"
+      },
+      {
+        "label": "LBB Builder Light",
+        "uiTheme": "vs",
+        "path": "./theme/LBB-Builder-Light.json"
       }
     ]
   }

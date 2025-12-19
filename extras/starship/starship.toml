@@ -1,25 +1,33 @@
-# ~/.config/starship.toml
 # LBB Builder prompt (cross-platform: macOS/Linux/Windows)
 add_newline = false
 
-format = "$username@$hostname:$directory $character"
+# Ubuntu-like:
+#   user@host:~/path git:branch $
+format = "$username$hostname$directory$git_branch $character"
 
 [username]
 show_always = true
+style_user = "fg:#ABE9B3"
+style_root = "fg:#D7263D"
 format = "[$user]($style)"
-style = "#ABE9B3"
 
 [hostname]
 ssh_only = false
-format = "[$hostname]($style)"
-style = "#ABE9B3"
+style = "fg:#ABE9B3"
+format = "@[$hostname]($style)"
 
 [directory]
-format = "[$path]($style)"
-style = "#89B4FA"
+style = "fg:#89B4FA"
+format = ":[$path]($style)"
+home_symbol = "~"
 truncate_to_repo = false
+truncation_length = 3
+
+[git_branch]
+symbol = "git:"
+style = "fg:#CBA6F7"
+format = " [$symbol$branch]($style)"
 
 [character]
-# Dim $ on success, red $ on error
-success_symbol = "[$](#6E6A86)"
-error_symbol = "[$](#D7263D)"
+success_symbol = "[\\$](fg:#6E6A86) "
+error_symbol   = "[\\$](fg:#D7263D) "
