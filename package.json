@@ -1,0 +1,25 @@
+{
+  "name": "lbb-builder-light",
+  "displayName": "LifeBusiness Builders Theme",
+  "description": "A custom colorful theme for Visual Studio Codium",
+  "version": "1.0.0",
+  "publisher": "LBB Creations",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "LBB Builder Light",
+        "uiTheme": "vs",
+        "path": "./theme/LBB-Builder-Light.json"
+      },
+      {
+        "label": "LBB Builder Dark",
+        "uiTheme": "vs-dark",
+        "path": "./theme/LBB-Builder-Dark.json"
+      }
+    ]
+  }
+}

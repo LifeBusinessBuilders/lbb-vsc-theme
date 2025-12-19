@@ -1,0 +1,25 @@
+# ~/.config/starship.toml
+# LBB Builder prompt (cross-platform: macOS/Linux/Windows)
+add_newline = false
+
+format = "$username@$hostname:$directory $character"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style = "#ABE9B3"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "#ABE9B3"
+
+[directory]
+format = "[$path]($style)"
+style = "#89B4FA"
+truncate_to_repo = false
+
+[character]
+# Dim $ on success, red $ on error
+success_symbol = "[$](#6E6A86)"
+error_symbol = "[$](#D7263D)"
