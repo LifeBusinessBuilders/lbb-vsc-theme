@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install publishing CLIs
+        run: npm i -g @vscode/vsce ovsx
+      - name: Verify tag matches package.json version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="${GITHUB_REF_NAME}"
+          if [ "v${VERSION}" != "${TAG}" ]; then
+            echo "Tag ${TAG} does not match package.json version v${VERSION}"
+            exit 1
+          fi
+      - name: Package VSIX
+        run: |
+          rm -f ./*.vsix
+          vsce package --no-dependencies
+          VSIX_PATH=$(ls -1 *.vsix | head -n 1)
+          echo "VSIX_PATH=${VSIX_PATH}" >> "$GITHUB_ENV"
+      - name: Publish to VS Code Marketplace
+        run: vsce publish -p "${{ secrets.VSCE_PAT }}" -i "${{ env.VSIX_PATH }}"
+      - name: Publish to Open VSX
+        run: ovsx publish "${{ env.VSIX_PATH }}" -p "${{ secrets.OVSX_PAT }}"
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.VSIX_PATH }}

@@ -1,8 +1,8 @@
-node_modules/
-*.vsix
+node_modules/**
+**/*.vsix
 .DS_Store
 .git/
-.github/
+.github/**
 .vscode/
 .vscode-test/
 tests/
