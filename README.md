@@ -11,6 +11,7 @@ A colorful VS Code/VSCodium theme pack for builders — balanced contrast, calm 
 
 ## Links
 
+- **Official Website**: [LifeBusiness Builders](https://lifebusinessbuilders.com/)
 - Open VSX (VSCodium): https://open-vsx.org/extension/lifebusinessbuilders/lbb-vsc-theme
 - VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=lifebusinessbuilders.lbb-vsc-theme
 - GitHub: https://github.com/LifeBusinessBuilders/lbb-vsc-theme
