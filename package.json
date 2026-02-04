@@ -2,12 +2,11 @@
   "name": "lbb-vsc-theme",
   "displayName": "LBB Builder Theme",
   "description": "A colorful theme pack for builders—balanced contrast, calm surfaces, and an integrated terminal palette designed for long, comfortable coding sessions.",
-  "markdown": "github",
   "galleryBanner": {
     "color": "#1E1E2E",
     "theme": "dark"
   },
-  "version": "1.1.3",
+  "version": "1.1.4",
   "publisher": "lifebusinessbuilders",
   "icon": "icon.png",
   "license": "MIT",
@@ -15,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme.git"
   },
-  "homepage": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme",
+  "homepage": "https://lifebusinessbuilders.com",
   "bugs": {
     "url": "https://github.com/LifeBusinessBuilders/lbb-vsc-theme/issues"
   },
