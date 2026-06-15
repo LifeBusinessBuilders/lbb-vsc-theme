@@ -5,7 +5,9 @@ node_modules/**
 .github/**
 .vscode/
 .vscode-test/
+.claude/**
 tests/
 scripts/
 tmp/
 extras/**
+.internal/**

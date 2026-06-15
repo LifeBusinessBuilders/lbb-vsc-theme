@@ -6,7 +6,7 @@
     "color": "#1E1E2E",
     "theme": "dark"
   },
-  "version": "1.1.4",
+  "version": "1.2.0",
   "publisher": "lifebusinessbuilders",
   "icon": "icon.png",
   "license": "MIT",
@@ -45,6 +45,11 @@
         "label": "LBB Builder Light",
         "uiTheme": "vs",
         "path": "./theme/LBB-Builder-Light.json"
+      },
+      {
+        "label": "LBB Builder Aurora",
+        "uiTheme": "vs-dark",
+        "path": "./theme/LBB-Builder-Aurora.json"
       }
     ]
   }

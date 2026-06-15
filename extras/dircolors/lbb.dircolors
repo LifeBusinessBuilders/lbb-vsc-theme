@@ -1,0 +1,210 @@
+# LBB Builder — dircolors preset for GNU `ls`
+#
+# This styles the COLORS OF FILES/FOLDERS in `ls` output (LS_COLORS), which is
+# separate from your editor theme and from your terminal's ANSI palette.
+#
+# Install:
+#   mkdir -p ~/.config/lbb
+#   cp extras/dircolors/lbb.dircolors ~/.config/lbb/dircolors
+# Then add to ~/.bashrc (or ~/.zshrc):
+#   alias ls='ls --color=auto'
+#   eval "$(dircolors -b ~/.config/lbb/dircolors 2>/dev/null || dircolors -b)"
+#
+# Uses only the 16 ANSI colors (no truecolor), so the actual hues come from
+# whichever LBB terminal theme is active — Dark, Light, or Bold all match.
+# Role map: DIR=blue/bold, LINK=teal(cyan), EXEC=green/bold, archives=mauve(magenta),
+# images & media=peach(bright yellow), code/text=default.
+
+# Attribute codes: 00=none 01=bold 04=underscore 05=blink 07=reverse
+# Text colors: 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Bright text: 90-97 (90=bright black/grey, 93=bright yellow/peach ...)
+
+COLORTERM ?*
+TERM Eterm
+TERM alacritty*
+TERM ansi
+TERM *color*
+TERM con[0-9]*x[0-9]*
+TERM cons25
+TERM console
+TERM cygwin
+TERM *direct*
+TERM dtterm
+TERM foot
+TERM gnome
+TERM hurd
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mlterm
+TERM putty
+TERM rxvt*
+TERM screen*
+TERM st
+TERM terminator
+TERM tmux*
+TERM vt100
+TERM wezterm*
+TERM xterm*
+
+# --- File types ---
+RESET 0
+NORMAL 00
+FILE 00
+DIR 01;34
+LINK 01;36
+MULTIHARDLINK 00
+FIFO 40;33
+SOCK 01;35
+DOOR 01;35
+BLK 40;33;01
+CHR 40;33;01
+ORPHAN 40;31;01
+MISSING 00
+SETUID 37;41
+SETGID 30;43
+CAPABILITY 00
+STICKY_OTHER_WRITABLE 30;42
+OTHER_WRITABLE 34;42
+STICKY 37;44
+EXEC 01;32
+
+# --- Archives & compressed -> mauve (magenta) ---
+.tar 01;35
+.tgz 01;35
+.arc 01;35
+.arj 01;35
+.taz 01;35
+.lha 01;35
+.lz4 01;35
+.lzh 01;35
+.lzma 01;35
+.tlz 01;35
+.txz 01;35
+.tzo 01;35
+.t7z 01;35
+.zip 01;35
+.z 01;35
+.dz 01;35
+.gz 01;35
+.lrz 01;35
+.lz 01;35
+.lzo 01;35
+.xz 01;35
+.zst 01;35
+.tzst 01;35
+.bz2 01;35
+.bz 01;35
+.tbz 01;35
+.tbz2 01;35
+.tz 01;35
+.deb 01;35
+.rpm 01;35
+.jar 01;35
+.war 01;35
+.ear 01;35
+.sar 01;35
+.rar 01;35
+.alz 01;35
+.ace 01;35
+.zoo 01;35
+.cpio 01;35
+.7z 01;35
+.rz 01;35
+.cab 01;35
+.wim 01;35
+.swm 01;35
+.dwm 01;35
+.esd 01;35
+
+# --- Images & media -> peach (bright yellow) ---
+.avif 01;93
+.jpg 01;93
+.jpeg 01;93
+.mjpg 01;93
+.mjpeg 01;93
+.gif 01;93
+.bmp 01;93
+.pbm 01;93
+.pgm 01;93
+.ppm 01;93
+.tga 01;93
+.xbm 01;93
+.xpm 01;93
+.tif 01;93
+.tiff 01;93
+.png 01;93
+.svg 01;93
+.svgz 01;93
+.mng 01;93
+.pcx 01;93
+.mov 01;93
+.mpg 01;93
+.mpeg 01;93
+.m2v 01;93
+.mkv 01;93
+.webm 01;93
+.webp 01;93
+.ogm 01;93
+.mp4 01;93
+.m4v 01;93
+.mp4v 01;93
+.vob 01;93
+.qt 01;93
+.nuv 01;93
+.wmv 01;93
+.asf 01;93
+.rm 01;93
+.rmvb 01;93
+.flc 01;93
+.avi 01;93
+.fli 01;93
+.flv 01;93
+.gl 01;93
+.dl 01;93
+.xcf 01;93
+.xwd 01;93
+.yuv 01;93
+.cgm 01;93
+.emf 01;93
+.ogv 01;93
+.ogx 01;93
+
+# --- Audio -> teal (cyan) ---
+.aac 00;36
+.au 00;36
+.flac 00;36
+.m4a 00;36
+.mid 00;36
+.midi 00;36
+.mka 00;36
+.mp3 00;36
+.mpc 00;36
+.ogg 00;36
+.ra 00;36
+.wav 00;36
+.oga 00;36
+.opus 00;36
+.spx 00;36
+.xspf 00;36
+
+# --- Backup / unimportant -> dim grey ---
+*~ 00;90
+*# 00;90
+.bak 00;90
+.old 00;90
+.orig 00;90
+.part 00;90
+.rej 00;90
+.swp 00;90
+.tmp 00;90
+.dpkg-dist 00;90
+.dpkg-old 00;90
+.ucf-dist 00;90
+.ucf-new 00;90
+.ucf-old 00;90
+.rpmnew 00;90
+.rpmorig 00;90
+.rpmsave 00;90
